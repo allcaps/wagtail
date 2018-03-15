@@ -280,6 +280,7 @@ Contributors
 * Michael Harrison
 * Todd Dembrey
 * Sebastian Brestin
+* Coen van der Kamp
 
 Translators
 ===========
