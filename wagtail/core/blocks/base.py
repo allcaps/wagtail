@@ -4,6 +4,7 @@ from importlib import import_module
 from uuid import uuid4
 
 from django import forms
+from django.conf import settings
 from django.core import checks
 from django.core.exceptions import ImproperlyConfigured
 from django.forms import Media
@@ -113,7 +114,7 @@ class Block(metaclass=BaseBlock):
         return forms.Media()
 
     def get_layout(self):
-        return self.SIMPLE
+        return getattr(settings, 'WAGTAIL_STREAMFIELD_LAYOUT', self.SIMPLE)
 
     def prepare_value(self, value, errors=None):
         return value
@@ -161,6 +162,7 @@ class Block(metaclass=BaseBlock):
             definition['group'] = str(self.meta.group)
         if self.meta.default:
             definition['default'] = self.prepare_value(self.get_default())
+        definition['closed'] = getattr(settings, 'WAGTAIL_STREAMFIELD_CLOSED', False)
         return definition
 
     def render_form(self, value, prefix='', errors=None):
