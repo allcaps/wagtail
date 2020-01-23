@@ -17,3 +17,4 @@ This section of the documentation is written for the users of a Wagtail-powered 
    managing_redirects
    administrator_tasks/index
    browser_issues
+   demo
