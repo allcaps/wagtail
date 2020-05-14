@@ -5,6 +5,7 @@ Advanced topics
 .. toctree::
     :maxdepth: 2
 
+    icons
     images/index
     documents/index
     embeds

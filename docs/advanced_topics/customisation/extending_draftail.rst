@@ -1,3 +1,5 @@
+.. _extending_the_draftail_editor:
+
 Extending the Draftail Editor
 =============================
 
