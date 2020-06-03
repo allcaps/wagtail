@@ -1,5 +1,6 @@
 // Help text formatters
-.help-block {
+.help-block,
+.nonfield li {
     padding: 1em;
     margin: 1em 0;
     clear: both;
@@ -20,7 +21,8 @@
 
 .help-info,
 .help-warning,
-.help-critical {
+.help-critical
+.nonfield li {
     border-radius: 3px;
     padding-left: 3.5em;
     position: relative;
@@ -52,7 +54,8 @@
     }
 }
 
-.help-critical {
+.help-critical,
+.nonfield li {
     background-color: lighten($color-red, 40%);
 
     &:before {
