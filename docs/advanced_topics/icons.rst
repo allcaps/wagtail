@@ -36,6 +36,25 @@ The SVG should:
  - Contain a ``symbol`` tag
  - Have ``id="icon-<name>"`` attribute
  - Not set the ``fill`` attribute
+ - Not set the ``xmlns`` attribute
+
+This SVG:
+
+.. code-block:: html
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+      <path fill="black" d="M0 0h16v16H0z"/>
+    </svg>
+
+
+Converted to a SVG symbol:
+
+.. code-block:: html
+
+    <symbol id="icon-square" viewBox="0 0 16 16">
+        <path d="M0 0h16v16H0z"/>
+    </symbol>
+
 
 Add the icon to the set with the ``register_icons`` hook.
 
