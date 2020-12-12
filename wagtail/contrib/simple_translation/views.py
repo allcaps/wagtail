@@ -9,9 +9,10 @@ from django.utils.translation import gettext as _
 from django.utils.translation import gettext_lazy
 from django.views.generic import TemplateView
 from django.views.generic.detail import SingleObjectMixin
+
 from wagtail.admin.views.pages.utils import get_valid_next_url_from_request
 from wagtail.contrib.simple_translation.forms import SubmitTranslationForm
-from wagtail.core.models import Locale, Page, TranslatableMixin
+from wagtail.core.models import Page, TranslatableMixin
 from wagtail.snippets.views.snippets import get_snippet_model_from_url_params
 
 
@@ -144,9 +145,7 @@ class SubmitSnippetTranslationView(SubmitTranslationView):
         )
 
     def get_success_message(self, locales):
-        return _(
-            "The {model_name} '{object}' was successfully submitted for translation into {locales}"
-        ).format(
+        return _("Successfuly created {locales} for {model_name} '{object}'").format(
             model_name=self.object._meta.verbose_name,
             object=str(self.object),
             locales=locales,
